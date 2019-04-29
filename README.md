@@ -1,4 +1,4 @@
-# Active Record MultiTenant Extension
+Active Record MultiTenant Extension
 =====================================
 
 This extension provides support for ActiveRecord MultiTenant.
