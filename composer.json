@@ -1,0 +1,36 @@
+{
+    "name": "solutosoft/yii-multitenant",
+    "description": "The Shared Database used by all tenants",
+    "keywords": ["yii2", "extensão", "base"],
+    "homepage": "https://gitlab.com/solutosoft/yii2-base",
+    "type": "yii2-extension",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Leandro Guindani Gehlen",
+            "email": "leandrogehlen@gmail.com",
+            "homepage": "https://github.com/leandrogehlen"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/solutosoft/yii-multitenant/issues?state=open",
+        "source": "https://github.com/solutosoft/yii-multitenant"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "yiisoft/yii2": "^2.0.16"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "autoload": {
+        "psr-4": {
+          "Soluto\\Multitenant\\": "src",
+          "Soluto\\Multitenant\\Tests\\": "tests"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    }
+}

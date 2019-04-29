@@ -1,0 +1,24 @@
+# project files
+.idea
+.vscode
+.buildpath
+.project
+.settings
+nbproject
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+composer.lock
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+
