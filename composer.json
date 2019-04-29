@@ -34,9 +34,6 @@
         "psr-4": {
           "Soluto\\Multitenant\\": "src",
           "Soluto\\Multitenant\\Tests\\": "tests"
-        },
-        "exclude-from-classmap": [
-            "/tests/"
-        ]
+        }
     }
 }
