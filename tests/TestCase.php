@@ -65,27 +65,39 @@ class TestCase extends \PHPUnit_Framework_TestCase
 
     /**
      * Populates Yii::$app with a new application
-     * @param string $type
      * @param array $extra
      * @return void
      */
-    protected function mockApplication($type, $extra = [])
+    protected function mockApplication($extra = [])
     {
-        $file = __DIR__ . "/config/{$type}.php";
+        $config  = ArrayHelper::merge([
+            'class' => 'yii\web\Application',
+            'id' => 'yii-multitenant-web-test',
+            'basePath' => dirname(__DIR__) . '/../',
+            'vendorPath' => __DIR__ . '/../../vendor',
+            'timeZone' => 'UTC',
+            'components' => [
+                'db' => [
+                    'class' => 'yii\db\Connection',
+                    'dsn' => 'sqlite::memory:',
+                ],
+                'user' => [
+                    'identityClass' => 'Soluto\Multitenant\Tests\Models\Person',
+                    'authTimeout' => 10,
+                    'enableSession' => false,
+                ],
+                'request' => [
+                    'cookieValidationKey' => 'TPweYCnTCow7EwZlCkjOYsSL',
+                    'scriptFile' => __DIR__ .'/index.php',
+                    'scriptUrl' => '/index.php',
+                ],
+            ]
+        ], $extra);
 
-        if (!file_exists($file)) {
-            throw new NotSupportedException("Configuration file '{$file}' is missing.");
-        } else {
-            $config = require($file);
-            $config['basePath'] = __DIR__;
-            $config['vendorPath'] = dirname(dirname(__DIR__)) . '/vendor';
+        Yii::createObject($config);
 
-            $config  = ArrayHelper::merge($config, $extra);
-            Yii::createObject($config);
-
-            $this->setupDatabase();
-            $this->initFixtures();
-        }
+        $this->setupDatabase();
+        $this->initFixtures();
     }
 
     protected function setupDatabase()

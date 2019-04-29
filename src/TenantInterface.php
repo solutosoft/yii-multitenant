@@ -2,7 +2,6 @@
 
 namespace Soluto\Multitenant;
 
-
 interface TenantInterface {
 
     /**

@@ -13,7 +13,7 @@ class MultiTenantRecordTest extends TestCase
      */
     protected function setUp()
     {
-        $this->mockApplication('web');
+        $this->mockApplication();
         $this->loggedInAs(1);
     }
 
