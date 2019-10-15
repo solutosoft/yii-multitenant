@@ -4,7 +4,6 @@ namespace Soluto\Multitenant\Tests\Models;
 
 use Soluto\Multitenant\MultiTenantRecord;
 use Soluto\Multitenant\TenantInterface;
-use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 /**
@@ -20,11 +19,10 @@ use yii\web\IdentityInterface;
  * @property Tag[] $tags
  * @property Contact[] $contacts
  */
-class Person extends ActiveRecord implements
+class Person extends MultiTenantRecord implements
     IdentityInterface,
     TenantInterface
 {
-    use MultiTenantRecord;
 
     /**
      * @inheritdoc
