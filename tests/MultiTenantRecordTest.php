@@ -3,6 +3,9 @@
 namespace solutosoft\multitenant\tests;
 
 use solutosoft\multitenant\tests\fixtures\PersonFixture;
+use solutosoft\multitenant\tests\fixtures\PersonTagFixture;
+use solutosoft\multitenant\tests\fixtures\PessoaTagFixture;
+use solutosoft\multitenant\tests\fixtures\TagFixture;
 use solutosoft\multitenant\tests\models\Person;
 
 class MultiTenantRecordTest extends TestCase
@@ -23,7 +26,9 @@ class MultiTenantRecordTest extends TestCase
     public function fixtures()
     {
         return [
-            'people' => PersonFixture::class
+            'people' => PersonFixture::class,
+            'tags' => TagFixture::class,
+            'persontags' => PersonTagFixture::class
         ];
     }
 
@@ -58,5 +63,18 @@ class MultiTenantRecordTest extends TestCase
 
         $this->assertCount(count($data), Person::find()->withoutTenant()->all());
         $this->assertCount(count($filtered), Person::find()->all());
+    }
+
+    public function testToArray()
+    {
+        $person = $this->people('bob');
+        $data = $person->toArray([], ['tags']);
+
+        $this->assertArrayNotHasKey('tenant_id', $data);
+        $this->assertArrayHasKey('tags', $data);
+
+        foreach ($data['tags'] as $tag) {
+            $this->assertArrayNotHasKey('tenant_id', $tag);
+        }
     }
 }

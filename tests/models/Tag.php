@@ -2,7 +2,7 @@
 
 namespace solutosoft\multitenant\tests\models;
 
-use soluto\base\db\MultiTenantRecord;
+use solutosoft\multitenant\MultiTenantRecord;
 use yii\db\ActiveRecord;
 
 /**
@@ -27,7 +27,7 @@ class Tag extends ActiveRecord
     public function rules()
     {
         return [
-            [['description', 'link'], 'string'],
+            [['description'], 'string'],
             [['description'], 'required']
         ];
     }

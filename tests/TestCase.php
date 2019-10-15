@@ -107,7 +107,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
         $db->createCommand()->createTable('person', [
             'id' => 'pk',
             'name' => 'string',
-            'profile_id' => 'integeger',
+            'profile_id' => 'integer',
             'tenant_id' => 'integer'
         ])->execute();
 
@@ -116,6 +116,21 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'number' => 'string',
             'description' => 'string'
         ])->execute();
+
+        $db->createCommand()->createTable('tag', [
+            'id' => 'pk',
+            'description' => 'string',
+            'tenant_id' => 'integer'
+        ])->execute();
+
+
+        $db->createCommand()->createTable('person_tag', [
+            'person_id' => 'integer',
+            'tag_id' => 'integer',
+            'PRIMARY KEY(person_id, tag_id)'
+        ])->execute();
+
+
     }
 
     /**

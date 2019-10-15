@@ -3,12 +3,12 @@
 return [
     'tag-1' => [
         'id' => 1,
-        'link' => 't01',
-        'description' => 'Tag 2'
+        'description' => 'Tag 1',
+        'tenant_id' => 1
     ],
     'tag-2' => [
         'id' => 2,
-        'link' => 't02',
-        'description' => 'Tag 2'
+        'description' => 'Tag 2',
+        'tenant_id' => 1
     ]
 ];

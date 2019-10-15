@@ -43,6 +43,15 @@ class Person extends ActiveRecord implements
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTags()
+    {
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])
+            ->viaTable('person_tag', ['person_id' => 'id']);
+    }
+
+    /**
      * @inheritdoc
      */
     public function rules()
@@ -50,6 +59,16 @@ class Person extends ActiveRecord implements
         return [
             [['name'], 'string'],
             [['profile_id'], 'integer']
+        ];
+    }
+
+     /**
+     * @inheritdoc
+     */
+    public function extraFields()
+    {
+        return [
+            'tags'
         ];
     }
 

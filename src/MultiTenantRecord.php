@@ -15,8 +15,8 @@ trait MultiTenantRecord
         if (!Yii::$app->user->isGuest) {
             $identity = Yii::$app->user->identity;
             if ($identity instanceof TenantInterface) {
-                if ($insert && $this->beforeApplyTenant() && !$this->tenant_id) {
-                    $this->tenant_id = $identity->getTenantId();
+                if ($insert && $this->beforeApplyTenant() && $this->{TenantInterface::ATTRIBUTE_NAME} === null) {
+                    $this->{TenantInterface::ATTRIBUTE_NAME} = $identity->getTenantId();
                     $this->afterApplyTenant();
                 }
             } else {
@@ -33,6 +33,21 @@ trait MultiTenantRecord
     {
         return Yii::createObject(MultiTenantQuery::class, [get_called_class()]);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function resolveFields(array $fields, array $expand)
+    {
+        $fields = parent::resolveFields($fields, $expand);
+
+        if ($this->hasAttribute(TenantInterface::ATTRIBUTE_NAME)) {
+            unset($fields[TenantInterface::ATTRIBUTE_NAME]);
+        }
+
+        return $fields;
+    }
+
 
 
     /**
