@@ -1,6 +1,6 @@
 <?php
 
-namespace Soluto\Multitenant;
+namespace solutosoft\multitenant;
 
 interface TenantInterface {
 

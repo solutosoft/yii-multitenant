@@ -1,8 +1,8 @@
 <?php
 
-namespace Soluto\Multitenant\Tests\Fixtures;
+namespace solutosoft\multitenant\tests\fixtures;
 
-use Soluto\Multitenant\Tests\Models\Tag;
+use solutosoft\multitenant\tests\models\Tag;
 use yii\test\ActiveFixture;
 
 class TagFixture extends ActiveFixture

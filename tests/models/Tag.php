@@ -1,6 +1,6 @@
 <?php
 
-namespace Soluto\Multitenant\Tests\Models;
+namespace solutosoft\multitenant\tests\models;
 
 use soluto\base\db\MultiTenantRecord;
 use yii\db\ActiveRecord;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Soluto\Multitenant\Tests\Fixtures;
+namespace solutosoft\multitenant\tests\fixtures;
 
-use Soluto\Multitenant\Tests\Models\Person;
+use solutosoft\multitenant\tests\models\Person;
 use yii\test\ActiveFixture;
 
 class PersonFixture extends ActiveFixture

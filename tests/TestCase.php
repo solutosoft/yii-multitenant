@@ -1,6 +1,6 @@
 <?php
 
-namespace Soluto\Multitenant\Tests;
+namespace solutosoft\multitenant\Tests;
 
 
 use Yii;
@@ -82,7 +82,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
                     'dsn' => 'sqlite::memory:',
                 ],
                 'user' => [
-                    'identityClass' => 'Soluto\Multitenant\Tests\Models\Person',
+                    'identityClass' => 'solutosoft\multitenant\tests\models\Person',
                     'authTimeout' => 10,
                     'enableSession' => false,
                 ],

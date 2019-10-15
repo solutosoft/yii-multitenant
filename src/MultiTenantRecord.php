@@ -1,6 +1,6 @@
 <?php
 
-namespace Soluto\Multitenant;
+namespace solutosoft\multitenant;
 
 use Yii;
 use yii\base\NotSupportedException;

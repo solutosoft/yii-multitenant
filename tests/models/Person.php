@@ -1,9 +1,9 @@
 <?php
 
-namespace Soluto\Multitenant\Tests\Models;
+namespace solutosoft\multitenant\tests\models;
 
-use Soluto\Multitenant\MultiTenantRecord;
-use Soluto\Multitenant\TenantInterface;
+use solutosoft\multitenant\MultiTenantRecord;
+use solutosoft\multitenant\TenantInterface;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 

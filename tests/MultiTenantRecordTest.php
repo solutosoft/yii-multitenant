@@ -1,9 +1,9 @@
 <?php
 
-namespace Soluto\Multitenant\Tests;
+namespace solutosoft\multitenant\tests;
 
-use Soluto\Multitenant\Tests\Fixtures\PersonFixture;
-use Soluto\Multitenant\Tests\Models\Person;
+use solutosoft\multitenant\tests\fixtures\PersonFixture;
+use solutosoft\multitenant\tests\models\Person;
 
 class MultiTenantRecordTest extends TestCase
 {

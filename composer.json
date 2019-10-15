@@ -32,8 +32,8 @@
     },
     "autoload": {
         "psr-4": {
-          "Soluto\\Multitenant\\": "src",
-          "Soluto\\Multitenant\\Tests\\": "tests"
+          "solutosoft\\multitenant\\": "src",
+          "solutosoft\\multitenant\\tests\\": "tests"
         }
     }
 }
