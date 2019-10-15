@@ -1,7 +1,7 @@
 {
     "name": "solutosoft/yii-multitenant",
-    "description": "The Shared Database used by all tenants",
-    "keywords": ["yii2", "extensão", "base"],
+    "description": "The shared database used by all tenants",
+    "keywords": ["yii2", "extension", "multitenant", "tenant"],
     "homepage": "https://gitlab.com/solutosoft/yii2-base",
     "type": "yii-extension",
     "license": "BSD-3-Clause",
