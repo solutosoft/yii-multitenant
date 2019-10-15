@@ -3,13 +3,15 @@
 namespace Soluto\Multitenant\Tests\Models;
 
 use soluto\base\db\MultiTenantRecord;
+use yii\db\ActiveRecord;
 
 /**
  * @property string $description
  * @property string $link
  */
-class Tag extends MultiTenantRecord
+class Tag extends ActiveRecord
 {
+    use MultiTenantRecord;
 
     /**
      * @inheritdoc

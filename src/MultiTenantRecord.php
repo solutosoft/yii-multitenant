@@ -4,9 +4,8 @@ namespace Soluto\Multitenant;
 
 use Yii;
 use yii\base\NotSupportedException;
-use yii\db\ActiveRecord;
 
-class MultiTenantRecord extends ActiveRecord
+trait MultiTenantRecord
 {
     /**
      *@inheritdoc
