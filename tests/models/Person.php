@@ -20,11 +20,10 @@ use yii\web\IdentityInterface;
  * @property Tag[] $tags
  * @property Contact[] $contacts
  */
-class Person extends ActiveRecord implements
+class Person extends MultiTenantRecord implements
     IdentityInterface,
     TenantInterface
 {
-    use MultiTenantRecord;
 
     /**
      * @inheritdoc
