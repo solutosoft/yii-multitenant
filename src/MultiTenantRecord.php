@@ -41,11 +41,7 @@ class MultiTenantRecord extends ActiveRecord
     protected function resolveFields(array $fields, array $expand)
     {
         $fields = parent::resolveFields($fields, $expand);
-
-        if ($this->hasAttribute(TenantInterface::ATTRIBUTE_NAME)) {
-            unset($fields[TenantInterface::ATTRIBUTE_NAME]);
-        }
-
+        unset($fields[TenantInterface::ATTRIBUTE_NAME]);
         return $fields;
     }
 
