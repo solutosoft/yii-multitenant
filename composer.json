@@ -16,7 +16,7 @@
         "issues": "https://github.com/solutosoft/yii-multitenant/issues?state=open",
         "source": "https://github.com/solutosoft/yii-multitenant"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
