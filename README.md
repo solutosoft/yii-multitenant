@@ -6,8 +6,8 @@ This extension provides support for ActiveRecord MultiTenant.
 [![Build Status](https://travis-ci.org/solutosoft/yii-multitenant.svg?branch=master)](https://travis-ci.org/solutosoft/yii-multitenant)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/solutosoft/yii-multitenant/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/solutosoft/yii-multitenant/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/solutosoft/yii-multitenant/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/solutosoft/yii-multitenant/?branch=master)
-[![Total Downloads](https://poser.pugx.org/solutosoft/yii-multitenant/downloads.png)](https://packagist.org/packages/yii2tech/ar-softdelete)
-[![Latest Stable Version](https://poser.pugx.org/solutosoft/yii-multitenant/v/stable.png)](https://packagist.org/packages/yii2tech/ar-softdelete)
+[![Total Downloads](https://poser.pugx.org/solutosoft/yii-multitenant/downloads.png)](https://packagist.org/packages/solutosoft/yii-multitenant)
+[![Latest Stable Version](https://poser.pugx.org/solutosoft/yii-multitenant/v/stable.png)](https://packagist.org/packages/solutosoft/yii-multitenant)
 
 Installation
 ------------
