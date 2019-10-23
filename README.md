@@ -59,16 +59,25 @@ class m191023_101232_create_post extends Migration
 2. Adds `TenantInterface` to user model:
 
 ```php
-use yii\db\ActiveRecord;
+use solutosoft\multitenant\MultiTenantRecord;
 
-class User extends ActiveRecord implements IdentityInterface, TenantInterface    
+class User extends MultiTenantRecord implements IdentityInterface, TenantInterface    
 {
-    **
+    /**
      * {@inheritdoc}
      */
     public function getTenantId()
     {
         return // logic to determine tenant from current user
+    }
+    
+    /**
+     * Finds user by username attribute
+     * This is an example where tenant filter is disabled
+     */
+    public static function findByUsername($username)
+    {
+        return static::find()->withoutTenant()->where(['username' => $username]);
     }
     
     ...
