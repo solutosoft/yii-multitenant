@@ -5,6 +5,7 @@ namespace solutosoft\multitenant;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\db\ActiveQuery;
+use yii\web\Application as WebApplication;
 
 class MultiTenantQuery extends ActiveQuery
 {
@@ -51,7 +52,7 @@ class MultiTenantQuery extends ActiveQuery
         if ($identity instanceof TenantInterface) {
             list(,$alias) = $this->getTableNameAndAlias();
             $this->andOnCondition(["{$alias}.tenant_id" => $identity->getTenantId()]);
-        } else {
+        } else if (Yii::$app instanceof WebApplication) {
             throw new NotSupportedException("Identity does not implements TenantInteface");
         }
     }
