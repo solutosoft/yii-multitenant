@@ -4,7 +4,6 @@ namespace solutosoft\multitenant\tests;
 
 use solutosoft\multitenant\tests\fixtures\PersonFixture;
 use solutosoft\multitenant\tests\fixtures\PersonTagFixture;
-use solutosoft\multitenant\tests\fixtures\PessoaTagFixture;
 use solutosoft\multitenant\tests\fixtures\TagFixture;
 use solutosoft\multitenant\tests\models\Person;
 

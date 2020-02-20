@@ -45,8 +45,6 @@ class MultiTenantRecord extends ActiveRecord
         return $fields;
     }
 
-
-
     /**
      * This method is invoked before assign the attribute tenant id
      * You may override this method to do preliminary checks before apply tenant id.
