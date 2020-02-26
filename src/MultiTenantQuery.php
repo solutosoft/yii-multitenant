@@ -50,10 +50,19 @@ class MultiTenantQuery extends ActiveQuery
     {
         $identity = Yii::$app->user->identity;
         if ($identity instanceof TenantInterface) {
-            list(,$alias) = $this->getTableNameAndAlias();
-            $this->andOnCondition(["{$alias}.tenant_id" => $identity->getTenantId()]);
+            $column = $this->qualifyTenantColumn();
+            $this->andOnCondition([$column => $identity->getTenantId()]);
         } else if (Yii::$app instanceof WebApplication) {
             throw new NotSupportedException("Identity does not implements TenantInteface");
         }
+    }
+
+    /**
+     * Qualify the tenant column name by the query's table.
+     * @return string
+     */
+    private function qualifyTenantColumn() {
+        list(,$alias) = $this->getTableNameAndAlias();
+        return $alias . '.' . TenantInterface::ATTRIBUTE_NAME;
     }
 }
